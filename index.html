@@ -1,0 +1,715 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Welcome to Sephora</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@200..700&display=swap');
+
+
+        @keyframes example {
+        40%{ background-color:rgb(251, 251, 250); }
+        60% { background-color: rgb(188, 169, 188); }
+        }
+        .container{
+            width: 100%;
+            height: 100%;
+            background-color: rgb(242, 234, 235);
+            animation-name: example;
+            animation-duration: 4s;
+
+        }
+        .container{
+            width: 95%;
+            margin: auto;
+        }
+        #top-banner{
+            /* text-align: right; */
+            display: flex;
+            gap: 2px;
+            background-color: rgba(221, 199, 242, 0.901);
+            box-shadow: 0px 1px 3px 1px gray;
+        }
+        #top-banner>img{
+            margin: auto;
+        }
+       #top-banner>h4{
+            margin: auto;
+        }
+        @media only screen and (max-width:748px) {
+            #top-banner{
+                background-color: rgb(234, 201, 219);
+                
+            }
+            #top-banner>img{
+                display: none;
+            }           
+        }
+        .search-div{
+            display: flex;
+            /* border: 2px solid red; */
+    
+
+
+
+        }
+        .search-bar{
+            display: flex;
+            border: 2px solid;
+            border-radius: 50px;
+            padding: 5px;
+            height: 50%;
+            margin: auto;
+            margin-left: 10px;
+            justify-content: space-between;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        .search-bar input[type = "text"]{
+            border: none;
+            outline: none;
+        }
+        .search-bar img{
+            width: 20px;
+            height: 20px;
+            margin-right: 5px;
+        }
+        .withlist{
+            /* border:  2px solid; */
+            height: 50%;
+            margin: auto;
+        }
+        .withlist img{
+            width: 40px;
+            border-radius: 30px;
+        
+        }
+        .withlist img:hover{
+            background-color: gray;
+        }
+        .cart{
+            /* border:  2px solid; */
+            height: 50%;
+            margin: auto;
+        }
+        .cart img{
+            width: 40px;
+        }
+        .store{
+            display: flex;
+            height: 50%;
+            justify-content: space-evenly;
+            margin: auto;
+
+        }
+        .store>img{
+            width: 40px;
+            height: 50%;
+            margin: auto;
+            margin-right: 8px;
+        }
+        .store div p{
+            margin-top: -10%;
+        }
+        @media only screen and (max-width:748px) {
+            .hide{
+                display: none;
+            }
+            
+        }
+ 
+        .navbar {
+
+        overflow: hidden;
+        display: flex;
+        background-color: #333;
+        justify-content: space-around;
+        }
+        @media only screen and (max-width:748px) 
+        {
+            .navbar{
+                
+                flex-wrap: wrap;
+                justify-content: center;
+                background-color: rgb(54, 49, 53);
+                
+                overflow: hidden;
+                position: fixed;
+                bottom: 0;
+                width: 537px;
+                height: 80px;
+            
+
+            }
+            
+        }
+
+        .navbar a {
+        float:left;
+        display: block;
+        color: #e7dae7;
+        text-align: center;
+        padding: 15px 18px;
+        text-decoration: none;
+        }
+
+        .navbar a:hover {
+        background-color: #ddd;
+        color: black;
+        }
+        .offer-banner{
+            display: flex;
+            background-color:rgb(160, 116, 186)
+        }
+
+        .offer-banner :nth-child(2){
+            /* border: 2px solid; */
+            margin: auto;
+            
+            text-align: center;
+        }
+        .offer-banner>div>h2{
+            font-size: 41px;
+        }
+        .offer-banner>div>h6{
+            font-size: 15px;
+        }
+        .offer-banner :nth-child(1){
+            border-radius: 4px;
+        }
+        @media only screen and (max-width: 748px) {
+            .offer-banner{
+                flex-wrap: wrap;
+            }
+            .offer-banner img{
+                width: 100%;
+            }
+            
+        }
+        #slider_1{
+            display:grid;
+            grid-template-columns: repeat(5,1fr);
+            gap: 5px;
+            
+        }
+        @media only screen and (max-width:670px) {
+            #slider_1{
+
+                grid-template-columns: repeat(2,1fr);
+                background-color: azure;
+                gap: 2px;
+            }
+            
+        }
+        #card_for_slider_1{
+            text-align: center;
+            height: 370px;
+            box-shadow: 1px 4px 5px grey;
+            border-radius: 6px;
+        }
+        #slider_1_product_img{
+            width: 100%;
+            box-shadow: 1px 4px 5px rgb(238, 223, 223);
+            border-radius: 6px;
+        }
+        #card_for_slider_1:hover{
+            border: 2px solid rgb(161, 167, 167);
+            margin-top: -15px;
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+        }
+        #guidence_container{
+            /* border: 1px solid pink; */
+            display: flex;
+            gap:7px;
+
+        }
+        @media only screen and (max-width: 748px) {
+            #guidence_container{
+                flex-wrap: wrap;
+                justify-content: space-between;
+            }
+            
+        }
+        #guidence_container :nth-child(4)>img{
+            margin-bottom: 20px;
+            /* border: 3px solid violet; */
+
+        }
+        #guidence_card{
+            text-align: left;
+            width: 120px;
+            height: 150px;
+            /* border: 1px solid black; */
+            box-shadow: 1px 2px 2px #c2c0c0;
+            border-radius: 3px;
+
+        }
+        #guidence_card:hover{
+            margin-top: -2px;
+        }
+
+        .guidence_text{
+            /* border: 1px solid pink; */
+            font-weight: bolder;
+            margin-top: -1px;
+        }
+        #guidence_img{
+            width: 60px;
+            height: 50px;
+            margin-left: 50px;
+            margin-bottom: -55px
+        }
+        .Feedback{
+            background-color: rgb(188, 169, 188);
+            height: 50px;
+            text-align: center;
+            padding: auto;
+            
+        }
+        .Feedback>h4{
+            padding-top: 15px;
+        } 
+        .footer{
+            background-color: black;  
+            color: white;  
+                
+
+        }
+        .footer>.firstchild{
+            display: flex;
+            color: white;
+        }
+        @media only screen and (max-width:748px) {
+            .firstchild{
+                
+                flex-direction: column;
+            
+                
+                /* border: 2px solid #f10505; */
+            }   
+            .firstchild>.store{
+                /* border: 2px solid white;   */
+                margin-left: 30%;     
+        }
+    }
+        .footer>.firstchild>.store:hover{
+            color: rgb(213, 205, 205);
+        }
+        .footer>.firstchild>.store>img{
+            border-radius: 6px;
+        }
+        .secondchild{
+            display: flex;
+            color: #c2c0c0;
+            gap: 3px;
+            justify-content: space-evenly;
+            /* border: 2px solid rgb(250, 247, 247); */
+        }
+        .flags{
+            display: flex;
+            gap: 2px;
+            /* border: 2px solid white; */
+            height: 28px;
+        }
+        .flags>img{
+            width: 28px;
+            height: 20px;
+        }
+        @media only screen  and (max-width: 750px) {
+            .flags{
+                margin-bottom: 38px;
+                flex-wrap: wrap;
+            }
+ 
+            .flags>img{
+                width: 48px;
+                height: 25px;
+
+            }          
+        }
+
+        .cc{
+            margin-left: 40px;
+            display: flex;
+            gap: 12px;
+        }
+        .cc a{
+            /* margin: auto; */
+            margin-bottom: 50px;
+            margin-top: -30px;
+            color: #ddd;
+            text-decoration-line: none;
+            
+            
+        }
+
+
+
+
+
+
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div>
+            <div id="top-banner">
+                <h4>
+                    <b>Get 30%off** ALL Sephore Collection.</b> Ends 4/15. **Terms apply.
+                    <br>
+                    <b>Join Beauty Insider.</b>
+                </h4>
+                <img src="https://www.sephora.com/contentimages/2024-04-05-sse-bunlde-b-site-desktop-global-top-banner-rouge-unrecognized-1226x120-us-can_final.jpg?imwidth=612" alt="">
+
+            </div>
+            
+            <div class="search-div">
+                <h2 style="font-size: 21px;">
+                    S A P H O R A
+                </h2>
+                <div class="search-bar">
+                    <img src="https://th.bing.com/th/id/OIP.RvkQZwNm8v4Pr6h0D1iO6QHaHa?rs=1&pid=ImgDetMain" alt="Search Icon">
+                    <input type="text" placeholder="Search..">
+                </div>
+                <div class="store">
+                    <img class="hide" src="https://th.bing.com/th/id/R.97a8315075a550d998564d714a6391ab?rik=2eodNLwikqsjXA&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1966261.jpg&ehk=oWDEZuc5x5AW4%2fWBMKDoMZpjaQdDEOOGFtmV4147y1U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+                    <div class="hide">
+                        <h4 class="hide">STORE AND SERVICES</h4>
+                        <P class="hide">Chose your store</P>
+                    </div>
+                </div>
+                <div class="store">
+                    <img class="hide" src="https://th.bing.com/th/id/OIP.hyduoKFZFKgmyEithLwe4QHaGl?rs=1&pid=ImgDetMain" alt="">
+                    <div class="hide">
+                        <h4 class="hide">Cummunity</h4>
+                    </div>
+                </div>
+                <div class="store">
+                    <img class="hide" src="https://th.bing.com/th/id/R.97a8315075a550d998564d714a6391ab?rik=2eodNLwikqsjXA&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1966261.jpg&ehk=oWDEZuc5x5AW4%2fWBMKDoMZpjaQdDEOOGFtmV4147y1U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+                    <div class="hide">
+                        <h4 class="hide">Current Offers</h4>
+                        
+                    </div>
+                </div>
+                <div class="withlist">
+                    <img src="https://webstockreview.net/images/hearts-vector-png-7.png" alt="">
+                </div>
+                <div class="cart">
+                    <img src="https://th.bing.com/th/id/R.97a8315075a550d998564d714a6391ab?rik=2eodNLwikqsjXA&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1966261.jpg&ehk=oWDEZuc5x5AW4%2fWBMKDoMZpjaQdDEOOGFtmV4147y1U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+                    
+                </div>
+
+                
+            </div>
+        </div>
+        <div class="navbar">
+            <a href="#">New</a><a href="#">Brands</a><a href="#">Mackup</a><a href="#">Skincare</a><a href="#">Hair</a><a href="#">Fragrance</a><a href="#">Tool & Brushes</a><a href="#">Bath & Body</a><a href="#">Mini Size</a><a href="#">Gifts and Gift Cards</a><a href="#">Beauty Under #20</a><a href="#">Sale & Offers</a>
+        </div>
+        <div class="offer-banner">
+            <div>
+                <img src="https://www.sephora.com/contentimages/promo/promolp/2024/040524-savings-event/2024-04-sse-bundle-b-site-mobile-landing-page-rwd-buying-guide-all-tiers-shop-now-us-can-624x312.jpg?imwidth=624" alt="">
+                <div>
+                    <h2>
+                        Major Beauty Savings
+                    </h2>
+                </div>
+            </div>
+            <div>
+                <h2>It's Here: Saphora Savings Event</h2>
+                <h6>Use Code YAYSAVE online. Shopping at Store? Mention at checkout</h6>
+                <div>
+                    <h2>
+                        Everyday Savings
+                    </h2>
+
+                </div>
+            
+            </div>
+        </div>
+        <h2>Chosen For You.</h2>
+        <div id="slider_1" >
+            <!-- inside content is kept in Script -->
+        </div>
+        <h2>
+            Need a Little guidence
+            
+        </h2>
+        <p>Check out our <span><a href="#">quizez and Buying Guides</a></span></p>
+        <div id="guidence_container">
+            <!-- inside content is in script -->
+        </div>
+        <br>
+        <br>
+        <div class="Feedback">
+            <h4 style="margin: auto;">Website Feedbac <a href="#">Let us Know</a></h4>
+        </div>
+        <div class="footer">
+            <div class="firstchild">
+                <div class="store">
+                    <img src="https://th.bing.com/th/id/R.97a8315075a550d998564d714a6391ab?rik=2eodNLwikqsjXA&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1966261.jpg&ehk=oWDEZuc5x5AW4%2fWBMKDoMZpjaQdDEOOGFtmV4147y1U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+                    <div>
+                        <h4>STORE AND SERVICES</h4>
+                        <P>Chose your store</P>
+                    </div>
+                </div>
+                <div class="store">
+                    <img src="https://static.vecteezy.com/system/resources/previews/000/638/457/original/comments-icon-sign-illustration-vector.jpg" alt="">
+                    <div>
+                        <h4>Customer Service</h4>
+                        <P>Available</P>
+                    </div>
+                </div>
+                <div class="store">
+                    <img src="https://th.bing.com/th/id/R.97a8315075a550d998564d714a6391ab?rik=2eodNLwikqsjXA&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1966261.jpg&ehk=oWDEZuc5x5AW4%2fWBMKDoMZpjaQdDEOOGFtmV4147y1U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+                    <div>
+                        <h4>Get The App</h4>
+                        <P>Download Now</P>
+                    </div>
+                </div>
+                <div class="store">
+                    <img src="https://th.bing.com/th/id/R.97a8315075a550d998564d714a6391ab?rik=2eodNLwikqsjXA&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1966261.jpg&ehk=oWDEZuc5x5AW4%2fWBMKDoMZpjaQdDEOOGFtmV4147y1U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+                    <div>
+                        <h4>Get The Saphora Text Alerts</h4>
+                        <P>Sign Up Now</P>
+                    </div>
+                </div>
+                <div class="store">
+                    <img src="https://th.bing.com/th/id/R.97a8315075a550d998564d714a6391ab?rik=2eodNLwikqsjXA&riu=http%3a%2f%2fclipart-library.com%2fimg%2f1966261.jpg&ehk=oWDEZuc5x5AW4%2fWBMKDoMZpjaQdDEOOGFtmV4147y1U%3d&risl=&pid=ImgRaw&r=0&sres=1&sresct=1" alt="">
+                    <div>
+                        <h4>Saphora Credit Card Program</h4>
+                        <P>Want 25% of your perchase?</P>
+                    </div>
+                </div>
+
+            </div>
+            <br>
+            <hr style="width: 90%;">
+            <br>
+            <div class="secondchild">
+                <div class="fourcards">
+                    <h4>About Sephora</h4>
+                    <p>About Sephora</p>
+                    <p>Newsroom</p>
+                    <p>Careers</p>
+                    <p>Sephora Value</p>
+                    <p>Supply Chain Transparency</p>
+                    <p>Affilates</p>
+                    <p>Sephora Events</p>
+                    <p>Gift Cards</p>
+                    <p>Sephora Global Sites</p>
+                    <p>Diversity, Equity & Inclusion</p>
+                    <p>Sephora Accelerate</p>
+                    <p>Beauty(Re)Purposed</p>
+                    <p>Report a Vulnerability</p>
+
+                </div>
+                <div class="fourcards">
+                    <h4>My Sephora</h4>
+                    <P>Beauty Insider</P>
+                    <P>Sephora Credit Card</P>
+                    <P>Community Profile</P>
+                    <P>Order Status</P>
+                    <P>Purchase History</P>
+                    <P>Accunt Setting</P>
+                    <P>Beuty Advisor Recomendations</P>
+                    <P>Beauty Offers</P>
+                    <P>Quizzes & Buying Guides</P>
+                    <P>Rewards Bazaar</P>
+                    <P>Loves</P>
+                    <P>Book a Reservation</P>
+                </div>
+                <div class="fourcards">
+                    <h5>Help</h5>
+                    <p>Cutomer Service</p>
+                    <p>Return & Exchange</p>
+                    <p>Delivery and Pickup Options</p>
+                    <p>Shopping</p>
+                    <p>Billing</p>
+                    <p>Internation Shipments</p>
+                    <p>Beauty Services FAQ</p>
+                    <p>Sephora at Kohl's</p>
+                    <p>Online Ordering</p>
+                    <p>Klama & Aferpay</p>
+                    <p>Accessibility</p>
+                </div>
+                <div class="fourcards">
+                    <h5 class= "region_and_language">Region and Language</h5>
+                    <div class="flags"><img src="https://th.bing.com/th/id/OIP.bNM6BI7X9AotYV74-pufdgHaEZ?w=293&h=180&c=7&r=0&o=5&pid=1.7" alt=""><p style="margin-top: -1px;">United States-English</p></div>
+                    <div class="flags"><img src="https://th.bing.com/th/id/OIP.MrJ4f6_htAlaiyNvJSb5kgHaEH?w=295&h=180&c=7&r=0&o=5&pid=1.7" alt=""><p></p>Canada-English</div>
+                    <div class="flags"><img src="https://th.bing.com/th/id/OIP.MrJ4f6_htAlaiyNvJSb5kgHaEH?w=295&h=180&c=7&r=0&o=5&pid=1.7" alt=""><p></p>Canada-Francias</div>
+                </div>
+            </div>
+            <br>
+            <br>
+            <hr style="width: 93%;">
+            <p style="margin-left:40px;">@c 2024 Sephora USA, Inc. All rights reserved</p>
+            <br>
+            <div class="cc">
+                <a href="https://www.sephora.com/beauty/privacy-policy">Privacy Policy</a><a href="https://www.sephora.com/beauty/terms-of-use">Terms of use</a><a href="https://www.sephora.com/beauty/accessibility">Accessibility</a><a href="https://www.sephora.com/sitemap/departments/">Sitemap</a><a id="privacy-policy" href="">Your Privacy Choices</a>
+            </div>
+        </div>
+    </div>    
+</body>
+</html>
+<script>
+let Slider_data = [
+    {
+        sr_no:"1", 
+        img_link : "https://www.sephora.com/productimages/sku/s2249993-main-zoom.jpg?imwidth=166",
+        tital: "Kerastase",
+        discription: "Mini ELixir Ultimate Hydrating Hair Oil Serum",
+        price:`$ ${12}`,
+    },
+    {
+        sr_no:"2" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2685709-main-zoom.jpg?imwidth=122",
+        tital: "K18",
+        discription: "Mini Moleculer Repair Hair Oil",
+        price:`$ ${12}`,
+    },
+    {
+        sr_no:"3" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2442200-main-zoom.jpg?imwidth=122",
+        tital: "COLOR WOW",
+        discription: "Mini Dream Supernatural...",
+        price:`$ ${12}`,
+    },
+    {
+        sr_no:"4" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2249993-main-zoom.jpg?imwidth=166",
+        tital: "Kerastase",
+        discription: "Nutritive 8H magic Night Serum..",
+        price:`$ ${16.00}`,
+    },
+    {
+        sr_no:"5" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2547255-main-zoom.jpg?imwidth=122",
+        tital: "K18 Biomimetic Ha...",
+        discription: "Mini Leave-In Molecolar Repair Ha..",
+        price:`$ ${29.00}`,
+    },
+    {
+        sr_no:"6" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2249993-main-zoom.jpg?imwidth=122",
+        tital: "Kerastase",
+        discription: "Mini Elixir Ultime Hydrating Hair Oil..",
+        price:`$ ${28.00}`,
+    },
+    {
+        sr_no:"7" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2325157-main-zoom.jpg?imwidth=122",
+        tital: "Genesis Strenghening Seru..",
+        discription: "",
+        price:`$ ${60.00}`,
+    },
+    {
+        sr_no:"8" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2325132-main-zoom.jpg?imwidth=122",
+        tital: "Kerastase",
+        discription: "Geneseis Strengthening Hair ... ",
+        price:`$ ${12}`,
+    },
+    {
+        sr_no:"9" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2325140-main-zoom.jpg?imwidth=122",
+        tital: "Karatese",
+        discription: "Resistance Heat Protecting Leave In",
+        price:`$ ${12}`,
+    },
+    {
+        sr_no:"10" ,
+        img_link : "https://www.sephora.com/productimages/sku/s2325124-main-zoom.jpg?imwidth=122",
+        tital: "Karastese",
+        discription: "Genesis Strengthening ..",
+        price:`$ ${48}`,
+    }
+]
+
+let slider_1 = document.getElementById("slider_1")
+
+for (let i = 0; i<Slider_data.length;i++)
+{
+    let card= document.createElement("div")
+    card.id = "card_for_slider_1"
+    let product_img = document.createElement("img")
+    product_img.id = "slider_1_product_img" 
+    product_img.src = Slider_data[i].img_link
+    let slider_1_tital = document.createElement("h4")
+    slider_1_tital.innerHTML = Slider_data[i].tital
+    let discription = document.createElement("p")
+    discription.innerHTML = Slider_data[i].discription
+    let price = document.createElement("h5")
+    price.innerHTML=Slider_data[i].price
+    card.append(product_img)
+    card.append(slider_1_tital)
+    card.append(discription)
+    card.append(price)
+    slider_1.append(card)
+
+}
+let guidence_container=document.getElementById("guidence_container")
+let guidence_container_data= [
+    {
+        id : 1,
+        txt:  "Clean + planet aware at sephora",
+        img : "https://www.sephora.com/contentimages/homepage/041624/cleanplanet.JPG?imwidth=53"
+    },
+    {
+        id :2,
+        txt: "Black owned Brands",
+        img: "https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/CategoryTiles/homepage_featured_category_tile_BOB_us_rwd_slice.png?imwidth=53"
+    },
+    {
+        id:3,
+        txt:"Value Size Beauty",
+        img:"https://www.sephora.com/contentimages/homepage/111023/value%20size%2032@3x-1280x1280.png?imwidth=53"
+    },
+    {
+        id:4,
+        txt:"Find Your Perfect Foundation",
+        img:"https://www.sephora.com/contentimages/homepage/010124/foundation.JPG?imwidth=53"
+    },
+    {
+        id:5,
+        txt: "skin care Routinr Builder",
+        img:"https://www.sephora.com/contentimages/homepage/010124/hair%20girl.JPG?imwidth=53"
+    },
+    {
+        id:6,
+        txt: "Shinny Hair Guidence",
+        img:"https://www.sephora.com/contentimages/homepage/060222/Homepage/RWD/CategoryTiles/homepage_featured_category_tile_healthy%20scalp%20guide_us_ca_rwd_slice.png?imwidth=53"
+    },
+    {
+        id:7,
+        txt: "Fragrance Hub",
+        img:"https://www.sephora.com/contentimages/homepage/010124/fragrance%20hub.JPG?imwidth=53"
+    },
+    {
+        id:8,
+        txt:"Gifts",
+        img:"https://www.sephora.com/contentimages/homepage/092022/Homepage/RWD/gifts%2032@3x.png?imwidth=53"
+    }
+
+] 
+guidence_container_data.forEach((item,i)=>
+{
+    let card = document.createElement("div")
+    card.id = "guidence_card"
+    let text = document.createElement("p")
+    text.className= "guidence_text"
+    text.innerHTML= item.txt
+    let img = document.createElement("img")
+    img.id = "guidence_img"
+    img.src= item.img
+    card.append(text,img)
+    guidence_container.append(card)
+
+});
+
+let privacy_policy= document.getElementById("privacy-policy")
+privacy_policy.addEventListener("click",function(){
+    alert("SENSITIVE PERSONAL INFORMATION Sephora only uses and collects sensitive personal information for the purposes allowed by law or with your consent. Sephora does not collect or process sensitive personal information for the purpose of inferring characteristics about a consumer. DO NOT SELL OR SHARE MY PERSONAL INFORMATION If you have not yet opted out of sale/sharing of your personal information, please submit the form below. The information you provide below, if needed, will facilitate your request to opt-out of sale/sharing. If you do not provide the information requested below, we may not be able to identify you and process your request to opt-out. Any information you provide below will not be used, disclosed, or retained for any purpose other than processing the request to opt-out of sale/sharing. or more information about our privacy practices, please review our Privacy Policy. If you are logged into your Sephora account and have already been opted-out of sale/sharing of your personal information, the form will not appear.")
+})
+
+</script>
